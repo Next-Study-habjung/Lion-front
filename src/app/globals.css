@@ -1,3 +1,5 @@
+@import url("https://cdn.jsdelivr.net/gh/sun-typeface/SUIT@2/fonts/static/woff2/SUIT.css");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -15,15 +17,27 @@
     --background-end-rgb: 0, 0, 0;
   }
 }
+body,
+html {
+  width: 100dvw;
+  /* background: #f2f2f2; */
+  background: #ffc7a7;
+  overflow: hidden;
+  touch-action: pan-x pan-y;
+  height: 100dvh;
+}
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  overflow-x: hidden;
+  font-family: "SUIT", sans-serif;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  select,
+  textarea,
+  input {
+    touch-action: pan-x pan-y;
+  }
 }
 
 @layer utilities {
