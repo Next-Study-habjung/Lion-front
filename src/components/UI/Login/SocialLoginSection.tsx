@@ -3,6 +3,7 @@ import { scrollRef } from "../Common/Layout/ScrollContainer";
 import { SocialLoginButton } from "../Common/Button/SocialLoginButton";
 import { PropsWithChildren } from "react";
 import { Button } from "@nextui-org/react";
+import { useRouter } from "next/navigation";
 
 interface SocialLoginSectionProps {
   isOpen: boolean;
@@ -13,6 +14,7 @@ export const SocialLoginSection: React.FC<SocialLoginSectionProps> = ({
   isOpen,
   onClose,
 }) => {
+  const router = useRouter();
   return (
     <>
       {isOpen && (
@@ -39,9 +41,21 @@ export const SocialLoginSection: React.FC<SocialLoginSectionProps> = ({
                 ))}
               </div>
               <div className="flex w-full justify-center items-center mt-5">
-                <StringButton>이메일로 로그인</StringButton>
+                <StringButton
+                  onClick={() => {
+                    router.push("/login");
+                  }}
+                >
+                  이메일로 로그인
+                </StringButton>
                 <div className="border-1 border-r-[#C4C4C4] h-3 ml-3" />
-                <StringButton>회원가입</StringButton>
+                <StringButton
+                  onClick={() => {
+                    router.push("/join");
+                  }}
+                >
+                  회원가입
+                </StringButton>
               </div>
             </div>
           </motion.div>
@@ -51,9 +65,19 @@ export const SocialLoginSection: React.FC<SocialLoginSectionProps> = ({
   );
 };
 
-const StringButton: React.FC<PropsWithChildren<{}>> = ({ children }) => {
+interface StringButtonProps {
+  onClick?: () => void;
+}
+
+const StringButton: React.FC<PropsWithChildren<StringButtonProps>> = ({
+  children,
+  onClick,
+}) => {
   return (
-    <Button className="bg-transparent text-[12px] text-[#767676] w-fit px-0">
+    <Button
+      className="bg-transparent text-[12px] text-[#767676] w-fit px-0"
+      onClick={onClick}
+    >
       <span className="grow w-fit">{children}</span>
     </Button>
   );
