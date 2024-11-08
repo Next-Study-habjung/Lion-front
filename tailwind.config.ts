@@ -14,6 +14,9 @@ const config: Config = {
         suit: ["SUIT"],
         lotte: ["seolleimcool-SemiBold"],
       },
+      colors: {
+        capation: "#767676",
+      },
     },
   },
   plugins: [
