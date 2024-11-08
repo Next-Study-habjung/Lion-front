@@ -12,10 +12,9 @@ export default function RootLayout({
       <ScrollContainerLayout>
         <ScreenHeight>
           {/* <UserOnly></UserOnly> */}
-          <div>
-            {children}
-            <Toaster position="bottom-center" />
-          </div>
+
+          {children}
+          <Toaster position="bottom-center" />
         </ScreenHeight>
       </ScrollContainerLayout>
     </ScaleLayout>
