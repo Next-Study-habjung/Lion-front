@@ -1,5 +1,5 @@
 import { api } from "./api";
-import { queryClient } from "./Contexts/Providers/queryClient";
+import { queryClient } from "./Composition/Providers/queryClient";
 import { useQuery } from "@tanstack/react-query";
 
 export const ACCESS_TOKEN_KEY = "accessToken";
@@ -19,7 +19,7 @@ const fetchAuth = async (code: string | null, provider: string) => {
       localStorage.setItem(ACCESS_TOKEN_KEY, response.data.tokens.accessToken);
       localStorage.setItem(
         REFRESH_TOKEN_KEY,
-        response.data.tokens.refreshToken
+        response.data.tokens.refreshToken,
       );
 
       queryClient.invalidateQueries({

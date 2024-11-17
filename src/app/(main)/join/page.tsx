@@ -1,4 +1,4 @@
-import { Join } from "@/components/Contexts/Pages/Join/Join";
+import { Join } from "@/components/Composition/Pages/Join/Join";
 
 export default function Home() {
   return (

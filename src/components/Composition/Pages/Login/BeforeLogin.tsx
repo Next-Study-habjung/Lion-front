@@ -6,7 +6,7 @@ import { useWindowSizeWithScale } from "@/hooks/common/useWindowSizeWithScale";
 import { useDisclosure } from "@nextui-org/react";
 import { SocialLoginSection } from "@/components/UI/Login/SocialLoginSection";
 
-export const Login = () => {
+export const BeforeLogin = () => {
   const { height } = useWindowSizeWithScale();
   const bottomSheet = useDisclosure({ defaultOpen: true });
   return (

@@ -1,4 +1,4 @@
-import { Login } from "@/components/Contexts/Pages/Login/Login";
+import { Login } from "@/components/Composition/Pages/Login/BeforeLogin";
 import { EmptyFeed } from "@/components/UI/Empty/EmptyFeed";
 
 export default function Home() {
